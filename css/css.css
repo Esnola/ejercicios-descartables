@@ -3,3 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.rojo{
+    color: red;
+    font-weight: 900;
+    font-style:  italic;
+    font-variant-caps:all-small-caps
+    
+}
