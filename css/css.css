@@ -32,6 +32,11 @@
 .nav a{
     color: #fff;
     text-decoration: none;
+    transition: all 0.3s linear;
+}
+.nav a:hover{
+    background: #1f6cb0;
+    padding: 1.2rem;
 }
 .social{ 
     background: #EA5455;
