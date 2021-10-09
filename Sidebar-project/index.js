@@ -1,20 +1,31 @@
-const bars = document.querySelector(".fa-bars");
-const sidebar = document.querySelector(".sidebar");
-const closingButton = document.querySelector(".fa-times");
-const oculta = document.addEventListener('click', ocultar);
-function ocultar() {
-  if (sidebar.classList.contains("show-sidebar")) {
-    setTimeout(() => {
-      sidebar.classList.toggle("show-sidebar");
-      
-    }, 500);
-    console.log('dentro')
-  }
+/* const bars = document.querySelector(".fa-bars");
+const sidebar = document.querySelector(".sidebar"); */
+
+const atajos = ['Escape', 'm', 'l', 'k']
+const tooltipText = document.querySelector('.tiptext');
+let miTexto = "";
+let coma = '';
+for (let i = 0; i < atajos.length; i++){
+  coma = (i < atajos.length - 1) ? ', ' : ''
+   miTexto += atajos[i] +  coma
 }
-bars.addEventListener("click", () => {
-  sidebar.classList.toggle("show-sidebar");
+
+tooltipText.textContent = 'Atajos de teclado ' + miTexto
+document.addEventListener('click', captura_click);
+
+document.addEventListener('keydown', (event) => {
+  (atajos.includes(event.key))
+    ? modalMenu() : "";
 });
 
-closingButton.addEventListener("click", () => {
-  sidebar.classList.remove("show-sidebar");
-});
+function captura_click(e) {
+  (e.target.classList.contains('fa-bars') ||
+    document.querySelector(".sidebar").classList.contains("show-sidebar"))
+    ? modalMenu() : '';
+  
+}
+function modalMenu() {
+  document.querySelector(".sidebar").classList.toggle("show-sidebar");
+  document.querySelector(".fa-bars").classList.toggle('visible');
+}
+

@@ -45,6 +45,9 @@ body {
   color: black;
 }
 
+.visible{
+  display: none;
+}
 .fa-times {
   font-size: 1.5rem;
   color: #e94949;
@@ -76,3 +79,76 @@ body {
   background: #f8a5a5;
   padding-left: 1.7rem;
 }
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+}
+.tooltip .tiptext {
+  font-size: 1rem;
+    visibility: hidden;
+    width: 180px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    padding: 6px 0;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 5px 30px rgba(192, 9, 116, 0.9);
+}
+.tooltip .tiptext::after {
+    content: "";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+}
+.tooltip:hover .tiptext {
+    visibility: visible;
+}
+.tooltip.top .tiptext{
+    margin-left: -30px;
+    bottom: 110%;
+    left: 10%;
+}
+.tooltip.top .tiptext::after{
+    margin-left: -5px;
+    top: 100%;
+    left: 50%;
+    border-color: #2E2E2E transparent transparent transparent;
+}
+.contenedor{
+background: #000;
+/* width: 100%; */
+padding-left: 40%;
+margin-top:20px;
+padding-top: 12px;
+padding-bottom: 12px;
+align-content: center;
+ 
+}
+.cubo{
+  width: 250px;
+  height: 250px;
+  background: darkorange;
+  border: 3px solid white;
+  cursor: pointer;
+   transition: 1s ease-in-out;
+  
+}
+.cubo:hover{
+  background-color: chartreuse;
+  transition:background-color 1s 0s ease-in;
+  transform: rotateZ(45deg);
+  transition:transform 1s 0s ease-in; 
+}
+.cubo:active{
+  transform: translate(230px, 140px);
+  transition:transform .1s 0s ease-in;
+}
+/* .cubo:mouseout{
+  background-color: chartreuse;
+  transform: rotateZ(45deg);
+  transition:background-color 1s 0s ease-in;
+  transition:transform 1s 0s ease-in;
+} */
