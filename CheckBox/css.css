@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -21,16 +21,17 @@ body {
 }
 
 .checkboxes {
+  max-width: 240px;
   width: 100%;
-  max-width: 420px;
 }
 
 .flipBox {
-  position: relative;
-  display: block;
-  text-align: left;
-  margin: 1em auto;
   cursor: pointer;
+  display: block;
+  margin: 1em auto;
+  position: relative;
+  text-align: left;
+  width: 10rem;
 }
 .flipBox:active > .flipBox_boxOuter {
   height: 25%;
@@ -39,11 +40,11 @@ body {
   padding-left: 1.25em;
 }
 .flipBox > input {
+  -moz-appearance: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  position: fixed;
+  appearance: none;
   left: -100vmax;
+  position: fixed;
   top: -100vmax;
 }
 .flipBox > input:checked ~ .flipBox_boxOuter {

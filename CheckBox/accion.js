@@ -1,14 +1,10 @@
 const labelDesactivado = document.getElementById('labelDesactivado');
 const chkDesactivado = document.getElementById('chkDesactivado');
 
-
-const controla = function (e) {
-   // e.preventDefault();
+document.addEventListener('click', controla = () => {
     const inputs = document.getElementsByTagName('input');
     for (let i = 0; i < inputs.length; i++) {
-        //console.log('Fuera')
         if (inputs[i].checked) {
-            // console.log('dentro');
             labelDesactivado.textContent = 'Activado';
             chkDesactivado.disabled = false;
             return;
@@ -18,6 +14,4 @@ const controla = function (e) {
             
         }
     }
-}
-
-document.addEventListener('click', controla);
+});
